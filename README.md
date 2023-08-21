@@ -1,52 +1,23 @@
-# vue-caixamensagem
+<h1> Em produção</h1>
+<h2> Caixa de mensagens para a bibliotecaOnline</h2>
 
-This template should help get you started developing with Vue 3 in Vite.
+<p>VueJS , TypeScript </br>
+Caixa de mensagens utiliza herança de componenetes reativos ,</br>
+mock de dados atraves de um arquivo JSON para renderizar as mensagens.
+</br></br>
+Contém : Caixa principal , </br>
+container para cada conversa , </br>
+caixa de mensagem para o dialogo completo , </br>
+mensagem do container e dialogo completo com identificação de "visualizado" ,</br>
+toolbar para deletar ou editar a mensagem do usuário. </br>
 
-## Recommended IDE Setup
+A caixa deve identificar a mensagem do próprio usuario e </br>
+iniciar corretamente as operações de crud de acordo com as regras de quem </br>
+enviou ou recebeu uma mensagem </br>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Contexto : 
+Todo livro solicitado na biblioteca deve ser enviado uma mensagem </br>
+e a caixa deve permitir os usuário interagirem.</br>
+a unica logica de dados que deve conter no componente é : </br>
+identificar qual mensagem a caixa pode ou não enviar uma soliticação de post para ser modificada.
+</p>
