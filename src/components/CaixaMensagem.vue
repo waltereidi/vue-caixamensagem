@@ -30,7 +30,7 @@ console.log(MensagensDataSource);
       </div>
       <div class="caixaMensagemBody" :class="{ hideMensagemBody : showCaixaMensagemBody}">
         <div v-for="mensagem in mensagensDataSource">
-          <MensagemLivros ></MensagemLivros>
+          <MensagemLivros :mensagem="mensagem"></MensagemLivros>
         </div>
         
 
