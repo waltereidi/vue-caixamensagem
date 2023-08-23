@@ -1,6 +1,6 @@
 <h1> Em produção</h1>
 <h2> Caixa de mensagens para a bibliotecaOnline</h2>
-
+<strong>npm run dev</strong></br>
 <p>VueJS , TypeScript </br>
 Caixa de mensagens utiliza herança de componenetes reativos ,</br>
 mock de dados atraves de um arquivo JSON para renderizar as mensagens.
