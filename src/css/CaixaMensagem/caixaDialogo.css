@@ -1,0 +1,42 @@
+
+.caixaDialogoHeader {
+    height: 3em;
+    background: red;
+    cursor:pointer;
+}
+
+.caixaDialogoBody {
+    min-height: 15em;
+    max-height: 80%;
+    background: red;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.caixaDialogoBody::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.caixaDialogoBody::-webkit-scrollbar-track {
+    background-color: #e0e0e0;
+}
+
+.caixaDialogoBody::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #E91E63;
+}
+
+.hide {
+    display: none;
+}
+.caixaDialogo{
+    bottom:0px;
+    width: 28em;
+    right:22.6em;
+    background: red;
+    position:fixed;
+}
+
+.caixaDialogoFooter{
+    margin:1em;
+}

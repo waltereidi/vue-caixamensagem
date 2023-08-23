@@ -1,0 +1,45 @@
+.caixaMensagem {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    width:22em;
+}
+
+.caixaMensagemHeader {
+    height: 3em;
+    background: red;
+    cursor:pointer;
+}
+
+.caixaMensagemBody {
+    min-height: 15em;
+    max-height: 80%;
+    background: red;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.caixaMensagemBody::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.caixaMensagemBody::-webkit-scrollbar-track {
+    background-color: #e0e0e0;
+}
+
+.caixaMensagemBody::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #E91E63;
+}
+
+.hide {
+    display: none;
+}
+.caixaDialogo{
+    bottom:0px;
+    width: 28em;
+    right:22.6em;
+    background: red;
+    position:fixed;
+
+}

@@ -1,0 +1,14 @@
+h1{
+    color:white;
+}
+.mensagemDialogo:hover {
+    background-color: white;
+}
+
+.mensagemDialogo:hover>div>i {
+    display: block;
+}
+
+.mensagemDialogo> div > i {
+    display: none;
+}
