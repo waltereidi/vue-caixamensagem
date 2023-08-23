@@ -3,7 +3,7 @@
 
 <strong>
 instruções : </br>
-  abra o terminal até o diretório.
+  abra o terminal até o diretório.</br>
   npm install </br>
   npm run dev</strong></br>
 <p>VueJS , TypeScript </br>
