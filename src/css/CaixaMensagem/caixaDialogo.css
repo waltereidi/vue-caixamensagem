@@ -1,13 +1,21 @@
 
 .caixaDialogoHeader {
-    height: 3em;
+    height: 2.3em;
     background: red;
     cursor:pointer;
 }
+.caixaDialogoHeader > div > div > h5 {
+    margin-top: 0.2em;
+    margin-left: 0.4em;
+    
+}
+#botoesHeader{
+    margin-top: 0.2em;
+
+}
 
 .caixaDialogoBody {
-    min-height: 15em;
-    max-height: 80%;
+    max-height: 30em;
     background: red;
     overflow-y: auto;
     overflow-x: hidden;
@@ -29,13 +37,7 @@
 .hide {
     display: none;
 }
-.caixaDialogo{
-    bottom:0px;
-    width: 28em;
-    right:22.6em;
-    background: red;
-    position:fixed;
-}
+
 
 .caixaDialogoFooter{
     margin:1em;

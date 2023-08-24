@@ -6,7 +6,7 @@
 }
 
 .caixaMensagemHeader {
-    height: 3em;
+    height: 2.5em;
     background: red;
     cursor:pointer;
 }
@@ -37,9 +37,15 @@
 }
 .caixaDialogo{
     bottom:0px;
-    width: 28em;
+    min-width: 18em;
+    width: 24em;
     right:22.6em;
     background: red;
     position:fixed;
+
+}
+.caixaMensagemHeader > h6 {
+    margin-left : 1em; 
+    padding-top:0.5em;
 
 }

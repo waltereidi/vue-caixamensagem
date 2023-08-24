@@ -5,11 +5,12 @@ export default {
     props: {
         dialogo: Object, 
         meuperfil_id: Number, 
-        livros_id: Number , 
+        livros_id: Number, 
+        user:Object,
     }, 
     data() {
         return {
-            enviarMensagemInput: null,
+            enviarMensagemInput: "",
             showCaixaDialogo: true,
         }
     },
@@ -39,8 +40,13 @@ export default {
 <template>
     <div class="caixaDialogoHeader border border-secondary" >
         <div class="row">
-            <div class="col-10" v-on:click="showCaixaDialogo = showCaixaDialogo == false"></div>
-            <div class="col-1"><i v-on:click="fecharCaixaDialogo" class="bi bi-x-square"></i></div>
+            <div class="col-9" v-on:click="showCaixaDialogo = showCaixaDialogo == false"><h5>UserName</h5></div>
+            <div class="col-1"  id="botoesHeader">
+                <i v-on:click="showCaixaDialogo = showCaixaDialogo == false" :class="{'bi bi-dash-square': showCaixaDialogo , 'bi bi-window' :!showCaixaDialogo}" ></i>
+            </div>
+            <div class="col-1"  id="botoesHeader">
+                    <i v-on:click="fecharCaixaDialogo" class="bi bi-x-square" ></i>
+                </div>
             <div class="col-1"></div>
         </div>
     </div>
@@ -52,14 +58,11 @@ export default {
         </div>
     </div>
     
-    <div class="caixaDialogoFooter border border-secondary">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"
-                v-model="this.enviarMensagemInput">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" v-on:click="enviarMensagem">Enviar</button>
+    <div class="caixaDialogoFooter">
+        <div class="input-group input-group-sm mb-3">
+              <textarea class="form-control" placeholder="Digite algo..." aria-label="Digite algo..." v-model="enviarMensagemInput" aria-describedby="botao-addon" rows="1"></textarea>
+              <button class="btn btn-secondary" type="button" id="botao-addon" v-on:click="enviarMensagem">Enviar</button>
             </div>
-        </div>
     </div>
     
 </template>

@@ -12,3 +12,25 @@ h1{
 .mensagemDialogo> div > i {
     display: none;
 }
+
+.profile_picture {
+    height: 2em;
+    width: 2em;
+
+}
+
+#dialogoHeader:hover .tableHeader4{
+    display: block;
+}
+.tableHeader1 {
+    width: 15%;
+}
+.tableHeader2 {
+    width: 80%;
+}
+.tableHeader3 {
+    width: 5%;
+}
+.tableHeader4 {
+    display:none;
+}

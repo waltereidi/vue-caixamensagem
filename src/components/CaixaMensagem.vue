@@ -45,18 +45,18 @@ export default {
 </script>
 <template>
   <h1>caixaMensagem</h1>
-  {{ mensagensDataSource }}
   <div :class="{'row row-cols-2' : showCaixaDialogo , '':!showCaixaDialogo }">
     <div :class="{'col':showCaixaDialogo , '':!showCaixaDialogo}">
       <div class="caixaMensagem border border-secondary rounded" >
           <div class="caixaMensagemHeader" v-on:click="showCaixaMensagemBody=showCaixaMensagemBody===false">
+              <h6>Mensgens</h6>
           </div>
               <div class="caixaMensagemBody" :class="{ hide : showCaixaMensagemBody}">
-              
+                
                 <div  v-for="mensagem in mensagensDataSource" class="border border-secondary">
                     <MensagemLivros :mensagem="mensagem" v-on:click="abrirDialogo( mensagem.meuperfil_id , mensagem.livros_id )" ></MensagemLivros>
                 </div>
-          </div>
+             </div>
       </div>
     </div>
     <div :class="{'col' : showCaixaDialogo , 'hide' : !showCaixaDialogo}">

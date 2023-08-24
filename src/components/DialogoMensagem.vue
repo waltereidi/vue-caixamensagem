@@ -1,5 +1,7 @@
 <script lang="ts">
+import config from "@/assets/json/bibliotecaconfig.json";
 export default {
+
     props: {
         mensagem: Object,
         meuperfil_id: Number,
@@ -13,18 +15,36 @@ export default {
             }
         }
         
+    },
+    data() {
+        return {
+            configDataSource: config, 
+        }
     }
 }
 
 </script>
 
 <template>
-    <div class="row mensagemDialogo">
-        <div class="col-2"> <p class="text-sm-start text-break">{{ this.mensagem.id }}</p> </div>
-        <div class="col-9"> <p class="text-sm-start text-break">{{ this.mensagem.mensagem }}</p> </div>
-        <div class="col-1"><i class="bi bi-x-square" v-on:click="deletarMensagem(this.mensagem.id)"></i> </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="card-subtitle mb-2 text-muted" id="dialogoHeader">
+            <table >
+                <tr>
+                    <th class="tableHeader1"><img class="profile_picture" :src="this.configDataSource.profile_pictureDefault"> </th>
+                    <th class="tableHeader2"><h6>{{ this.mensagem.created_at }}</h6></th>
+                    <th class="tableHeader3"></th>
+                    <th class="tableHeader4" v-if="this.user_id == this.mensagem.user_id"><i class="bi bi-trash" v-on:click="deletarMensagem(this.mensagem.id)"></i></th>
+                </tr>
+            </table>
+            
+            
+        </div>
+        <p class="card-text"> {{ this.mensagem.mensagem }}</p>
+
+      </div>
     </div>
-    
 </template>
 
 <style scoped>
