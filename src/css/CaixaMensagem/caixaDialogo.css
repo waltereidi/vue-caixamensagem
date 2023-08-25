@@ -1,10 +1,10 @@
 
 .caixaDialogoHeader {
     height: 2.3em;
-    background: red;
+    background: #ECEFF1;
     cursor:pointer;
 }
-.caixaDialogoHeader > div > div > h5 {
+.caixaDialogoHeader > div > div > a {
     margin-top: 0.2em;
     margin-left: 0.4em;
     
@@ -16,9 +16,10 @@
 
 .caixaDialogoBody {
     max-height: 30em;
-    background: red;
+    background: #ECEFF1;
     overflow-y: auto;
     overflow-x: hidden;
+    
 }
 
 .caixaDialogoBody::-webkit-scrollbar {

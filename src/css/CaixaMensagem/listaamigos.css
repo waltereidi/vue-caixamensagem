@@ -1,0 +1,45 @@
+img{
+    height: 2.3em;
+}
+.listaAmigoTd1{
+    width:2.3em;
+    
+}
+.listaAmigoTd2{
+    width: 11em;
+    padding-left: 0.3em;
+    word-break: break-all;
+    text-align: left;
+    
+}
+.listaAmigoTd3{
+    max-width: 6em;
+    font-size: 0.8em;
+    word-break:break-all;
+    text-align: right;
+}
+.listaAmigosTd4{
+    text-align: right;
+    
+}
+tr:hover>td >.options {
+    display: block;
+    
+}
+
+.options {
+    display: none;
+}
+.options > a:hover > .opcoesAmigos {
+    display:block;
+  
+
+}
+.options>a:hover>.opcoesAmigos {
+    display: block;
+
+
+}
+.opcoesAmigos{
+    display: none;
+}

@@ -1,17 +1,8 @@
-h1{
-    color:white;
-}
+
 .mensagemDialogo:hover {
-    background-color: white;
+    background-color: #CFD8DC;
 }
 
-.mensagemDialogo:hover>div>i {
-    display: block;
-}
-
-.mensagemDialogo> div > i {
-    display: none;
-}
 
 .profile_picture {
     height: 2em;
@@ -21,6 +12,10 @@ h1{
 
 #dialogoHeader:hover .tableHeader4{
     display: block;
+    cursor: pointer;
+}
+#dialogoHeader:hover .tableHeader4 > i:hover {
+   color:#dc3545 !important;
 }
 .tableHeader1 {
     width: 15%;
@@ -33,4 +28,7 @@ h1{
 }
 .tableHeader4 {
     display:none;
+}
+#botaoFecharDialogo:hover {
+    color: #dc3545 !important;
 }

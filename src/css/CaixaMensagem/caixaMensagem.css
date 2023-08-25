@@ -3,18 +3,21 @@
     right: 0px;
     bottom: 0px;
     width:22em;
+    margin-right:0.1em;
+    margin-bottom:0.1em;
+    font-family: Georgia, serif;
 }
 
 .caixaMensagemHeader {
     height: 2.5em;
-    background: red;
+    background: #ECEFF1;
     cursor:pointer;
 }
 
 .caixaMensagemBody {
     min-height: 15em;
     max-height: 80%;
-    background: red;
+    background: #ECEFF1;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -31,6 +34,9 @@
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #E91E63;
 }
+.caixaMensagemBody>table{
+    width: 100%;
+}
 
 .hide {
     display: none;
@@ -40,12 +46,19 @@
     min-width: 18em;
     width: 24em;
     right:22.6em;
-    background: red;
+    background: #ECEFF1;
     position:fixed;
-
+    margin-bottom: 0.2em;
+    
+    font-family: Georgia, serif;
 }
 .caixaMensagemHeader > h6 {
     margin-left : 1em; 
     padding-top:0.5em;
 
 }
+#caixaMensagemBodyCard:hover{ 
+    background-color:#E0E0E0;
+    cursor:pointer;
+}
+

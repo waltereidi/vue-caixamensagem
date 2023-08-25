@@ -7,40 +7,25 @@ export default {
     },
     data() {
         return {
-            capaDefault: bibliotecaconfig.capaLivroDefault, 
+            capaDefault: bibliotecaconfig.profile_pictureDefault, 
              
         }
     }
     }
 </script>
 <template>
-
-   <div class="container text-center" id="container">
-        <div class="row row-cols-4">
-            <div class="col">
-                <img :src="this.capaDefault" class="mg-fluid img-thumbnail">
-            </div>
-            <div class="col">
-                <p class="text-sm-start text-break" >{{ this.mensagem.livro_titulo }}</p>
-            </div>
-            <div class="col">
-                    <div class="row">
-                        <p class="text-sm-start " >{{ this.mensagem.autores_nome }}</p>
-                    </div>
-                    <div class="row">
-                         <p class="text-sm-start " >{{ this.mensagem.editoras_nome }}</p>
-                    </div>
-            </div>
-            <div class="col"> 
-                <i :class="{'bi bi-bookmark-check-fill fa-6x text-success m-3' : this.mensagem.visualizado}"></i>
-            </div>
-        </div>
-   </div>
-
+            <tr class="mensagensLivrosTableRow1">
+                <td class="mensagensLivrosTdCol1" rowspan="2"><img :src="this.capaDefault" class="rounded-circle" ></td>
+                <td class="mensagensLivrosTdCol2" rowspan="2">{{ this.mensagem.livro_titulo }}</td>
+                <td class="mensagensLivrosTdCol3">{{ this.mensagem.autores_nome }} </td>
+                <td class="mensagensLivrosTdCol4" rowspan="2"><i :class="{'bi bi-circle text-danger m-3' : !this.mensagem.visualizado, 'bi bi-check2-all text-primary m-3': this.mensagem.visualizado}"></i></td>
+            </tr>
+            <tr class="mensagensLivrosTableRow2">
+                <td class="mensagensLivrosTdCol3">{{ this.mensagem.editoras_nome }}</td>
+            </tr>
+       
 </template>
 <style scoped>
- p {
-    font-size: 0.8em;
- }
+@import "@/css/CaixaMensagem/mensagemLivros.css";
 
 </style>

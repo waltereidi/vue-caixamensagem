@@ -1,26 +1,31 @@
 <script lang="ts">
 import MensagemLivros  from "@/components/MensagemLivros.vue";
 import CaixaDialogo from "@/components/CaixaDialogo.vue";
+import ListaAmigos from "@/components/ListaAmigos.vue";
 
 //Fonte de dados arquivo Json.
 import MensagensDataSource from '@/assets/json/mensagensDataSource.json' ;
 import MensagensDialogoDataSource from '@/assets/json/mensagensDialogoDataSource.json';
+import listaAmigosDataSource from "@/assets/json/listaamigos.json";
 export default {
   name: 'CaixaMensagem' ,
   data() {
     return {
       dialogoDataSource: MensagensDialogoDataSource,
       dialogo :[],
-      mensagensDataSource : MensagensDataSource,
+      mensagensDataSource: MensagensDataSource,
+      listaAmigosDataSource: listaAmigosDataSource,
       showCaixaMensagemBody: false, 
       showCaixaDialogo: false,
       meuperfil_id: null, 
-      livros_id:null, 
+      livros_id: null, 
+      caixaMensagemAmigos: false,
     }
   },
   components: {
     MensagemLivros, 
     CaixaDialogo,
+    ListaAmigos,
   }, 
   methods:{
     abrirDialogo(meuperfil_id, livros_id) {
@@ -36,8 +41,14 @@ export default {
       });
       this.dialogo = novoDialogo; 
     },
-    childFecharCaixaDialogo(valorHerdado) {
-      this.showCaixaDialogo = valorHerdado;
+    childFecharCaixaDialogo() {
+      this.showCaixaDialogo = false;
+    }, 
+    childDeletarAmigo(id) {
+      if (confirm('Deseja realmente deletar este amigo?')) {
+        const amigoIndex = this.listaAmigosDataSource.findIndex(value => value.id === id);
+        this.listaAmigosDataSource.splice(amigoIndex, 1);
+      }
     }
   }
 }
@@ -49,14 +60,30 @@ export default {
     <div :class="{'col':showCaixaDialogo , '':!showCaixaDialogo}">
       <div class="caixaMensagem border border-secondary rounded" >
           <div class="caixaMensagemHeader" v-on:click="showCaixaMensagemBody=showCaixaMensagemBody===false">
-              <h6>Mensgens</h6>
+              <h6>Mensagens</h6>
           </div>
-              <div class="caixaMensagemBody" :class="{ hide : showCaixaMensagemBody}">
-                
-                <div  v-for="mensagem in mensagensDataSource" class="border border-secondary">
-                    <MensagemLivros :mensagem="mensagem" v-on:click="abrirDialogo( mensagem.meuperfil_id , mensagem.livros_id )" ></MensagemLivros>
-                </div>
-             </div>
+
+          <div class="caixaMensagemBody" :class="{ hide : showCaixaMensagemBody }">
+              <table v-if="!caixaMensagemAmigos">
+                  <div id="caixaMensagemBodyCard" v-for="mensagem in mensagensDataSource" class="border" v-on:click="abrirDialogo(mensagem.meuperfil_id, mensagem.livros_id)" >
+                      <MensagemLivros :mensagem="mensagem"></MensagemLivros>
+                  </div>
+              </table>
+
+              <table v-if="caixaMensagemAmigos">
+                    <div id="caixaMensagemBodyCard" v-for="amigo in listaAmigosDataSource" class="border" >
+                        <ListaAmigos :amigo="amigo" @deletarAmigo="childDeletarAmigo"></ListaAmigos>
+                    </div>
+              </table>
+          </div>
+          <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a :class="{'nav-link active':!caixaMensagemAmigos , 'nav-link' : caixaMensagemAmigos }" v-on:click="caixaMensagemAmigos=false" aria-current="page" href="#">Mensagens</a>
+              </li>
+              <li class="nav-item">
+                <a :class="{ 'nav-link active': caixaMensagemAmigos, 'nav-link': !caixaMensagemAmigos }" v-on:click="caixaMensagemAmigos=true" href="#">Lista de amigos</a>
+              </li>
+          </ul>
       </div>
     </div>
     <div :class="{'col' : showCaixaDialogo , 'hide' : !showCaixaDialogo}">

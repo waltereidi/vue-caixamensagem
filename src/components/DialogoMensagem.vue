@@ -20,7 +20,8 @@ export default {
         return {
             configDataSource: config, 
         }
-    }
+    },
+    emits: ['deletarMensagem'],
 }
 
 </script>
@@ -32,10 +33,10 @@ export default {
         <div class="card-subtitle mb-2 text-muted" id="dialogoHeader">
             <table >
                 <tr>
-                    <th class="tableHeader1"><img class="profile_picture" :src="this.configDataSource.profile_pictureDefault"> </th>
+                    <th class="tableHeader1"><img class="profile_picture rounded-circle" :src="this.configDataSource.profile_pictureDefault"> </th>
                     <th class="tableHeader2"><h6>{{ this.mensagem.created_at }}</h6></th>
                     <th class="tableHeader3"></th>
-                    <th class="tableHeader4" v-if="this.user_id == this.mensagem.user_id"><i class="bi bi-trash" v-on:click="deletarMensagem(this.mensagem.id)"></i></th>
+                    <th class="tableHeader4" v-if="this.meuperfil_id == this.mensagem.meuperfil_id"><i class="bi bi-trash" v-on:click="deletarMensagem(this.mensagem.id)"></i></th>
                 </tr>
             </table>
             
