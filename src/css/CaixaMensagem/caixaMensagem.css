@@ -15,8 +15,8 @@
 }
 
 .caixaMensagemBody {
-    min-height: 15em;
-    max-height: 80%;
+    min-height: 10em;
+    max-height: 60vh;
     background: #ECEFF1;
     overflow-y: auto;
     overflow-x: hidden;
@@ -61,4 +61,3 @@
     background-color:#E0E0E0;
     cursor:pointer;
 }
-

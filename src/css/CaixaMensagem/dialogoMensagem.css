@@ -2,20 +2,10 @@
 .mensagemDialogo:hover {
     background-color: #CFD8DC;
 }
-
-
 .profile_picture {
     height: 2em;
     width: 2em;
 
-}
-
-#dialogoHeader:hover .tableHeader4{
-    display: block;
-    cursor: pointer;
-}
-#dialogoHeader:hover .tableHeader4 > i:hover {
-   color:#dc3545 !important;
 }
 .tableHeader1 {
     width: 15%;

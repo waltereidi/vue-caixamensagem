@@ -1,5 +1,6 @@
 <script lang="ts">
 import DialogoMensagem from "@/components/DialogoMensagem.vue";
+import CaixaDialogoFooter from "@/components/CaixaDialogoFooter.vue";
 
 export default {
     props: {
@@ -16,20 +17,22 @@ export default {
     },
     components: {
         DialogoMensagem,
+        CaixaDialogoFooter,
     },
     methods: {
-        enviarMensagem() {
-            const dados = {
+        childEnviarMensagem(enviarMensagemInput:string , linkLivroInput:string ) {
+            const dados:object = {
                 "meuperfil_id": this.meuperfil_id,
                 "livros_id": this.livros_id,
-                "mensagem": this.enviarMensagemInput,
+                "mensagem": enviarMensagemInput,
+                "linkLivroInput": linkLivroInput , 
             }
             this.dialogo.push(dados);
         },
         fecharCaixaDialogo() {
             this.$emit('fecharCaixaDialogo');
         },
-        childDeletarMensagem(valorHerdado) {
+        childDeletarMensagem(valorHerdado:number ) {
             const index = this.dialogo.findIndex(value => value.id === valorHerdado);
             this.dialogo.splice(index, 1);
         }
@@ -39,16 +42,20 @@ export default {
 </script>
 <template>
     <div class="caixaDialogoHeader" >
-        <div class="row">
-            <div class="col-9" v-on:click="showCaixaDialogo = showCaixaDialogo == false"><a :href="meuperfil_id">UserName</a></div>
-            <div class="col-1"  id="botoesHeader">
-                <i v-on:click="showCaixaDialogo = showCaixaDialogo == false" :class="{'bi bi-dash-square ': showCaixaDialogo , 'bi bi-window' :!showCaixaDialogo}" ></i>
-            </div>
-            <div class="col-1"  id="botoesHeader">
-                  <i v-on:click="fecharCaixaDialogo" class="bi bi-x-square">x</i>
+         <div class="container">
+            <div class="row">
+                <div class="col-sm"><a :href="meuperfil_id">UserName</a></div>
+
+                <div v-on:click="showCaixaDialogo = showCaixaDialogo == false" class="col"></div>
+                <div v-on:click="showCaixaDialogo = showCaixaDialogo == false" class="col"></div>
+
+                <div class="col">
+                     <i v-on:click="showCaixaDialogo = showCaixaDialogo == false" :class="{ 'bi bi-dash-square': showCaixaDialogo, 'bi bi-window': !showCaixaDialogo }" ></i>
+                     <i  v-on:click="fecharCaixaDialogo" class="bi bi-x-square-fill text-danger m-3"></i>
                 </div>
-            <div class="col-1"></div>
-        </div>
+                
+            </div>
+    </div>
     </div>
 
     <div :class="{'caixaDialogoBody' : showCaixaDialogo , 'hide' : !showCaixaDialogo }">
@@ -58,12 +65,7 @@ export default {
         </div>
     </div>
     
-    <div class="caixaDialogoFooter">
-        <div class="input-group input-group-sm mb-3">
-              <textarea class="form-control" placeholder="Digite algo..." aria-label="Digite algo..." v-model="enviarMensagemInput" aria-describedby="botao-addon" rows="1"></textarea>
-              <button class="btn btn-primary" :disabled="this.enviarMensagemInput.length==0" type="button" id="botao-addon" v-on:click="enviarMensagem">Enviar</button>
-            </div>
-    </div>
+        <CaixaDialogoFooter :showCaixaDialogo="showCaixaDialogo" :linkLivro="true" @enviarMensagem="childEnviarMensagem"></CaixaDialogoFooter>
     
 </template>
 <style>

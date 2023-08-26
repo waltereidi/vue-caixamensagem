@@ -88,7 +88,7 @@ export default {
     </div>
     <div :class="{'col' : showCaixaDialogo , 'hide' : !showCaixaDialogo}">
         <div class="caixaDialogo border border-secondary rounded" >
-           <CaixaDialogo :dialogo="this.dialogo" :meuperfil_id="this.meuperfil_id" :livros_id="this.livros_id" @fecharCaixaDialogo="childFecharCaixaDialogo"></CaixaDialogo>
+           <CaixaDialogo  :dialogo="this.dialogo" :meuperfil_id="this.meuperfil_id" :livros_id="this.livros_id" @fecharCaixaDialogo="childFecharCaixaDialogo"></CaixaDialogo>
         </div>
     </div>
   </div>  
